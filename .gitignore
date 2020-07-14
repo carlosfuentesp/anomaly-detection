@@ -4,3 +4,6 @@
 
 #virtual env
 env/
+
+#python
+*.pyc
