@@ -3,6 +3,7 @@ import numpy as np
 
 
 def validate(model, x_normal, x_attack, x_normal_test):
+    print("Validating data...")
     pred = model.predict(x_normal_test)
     score1 = np.sqrt(metrics.mean_squared_error(pred, x_normal_test))
     pred = model.predict(x_normal)

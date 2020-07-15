@@ -23,6 +23,7 @@ def encode_text_dummy(df, name):
 
 def process(df):
     # display 5 rows
+    print('Preprocessing data...')
     pd.set_option('display.max_columns', 7)
     pd.set_option('display.max_rows', 5)
 

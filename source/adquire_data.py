@@ -4,6 +4,7 @@ from tensorflow.keras.utils import get_file
 
 def read_data():
     try:
+        print('Downloading Data...')
         path = get_file('kddcup.data_10_percent.gz',
                         origin='http://kdd.ics.uci.edu/databases/kddcup99/kddcup.data_10_percent.gz')
     except:
@@ -59,6 +60,3 @@ def read_data():
     ]
 
     return temp_df
-
-
-df = read_data()

@@ -4,6 +4,7 @@ from tensorflow.keras.layers import Dense
 
 
 def train(x_normal):
+    print("Training data...")
     x_normal_train, x_normal_test = train_test_split(x_normal, test_size=0.25, random_state=42)
 
     print(f"Normal train count: {len(x_normal_train)}")

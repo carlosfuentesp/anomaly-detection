@@ -7,6 +7,11 @@ env/
 
 # python
 *.pyc
+**/__pycache__/*
 
 # Jenkins
 jenkins/jenkins-admin-password.txt
+
+# Tests
+.coverage
+cov_html/
