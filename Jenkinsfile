@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Run ML pipeline') {
             steps {
-                sh "python3 source/main.py"
+                sh "python3 /source/main.py"
             }
         }
 /*         stage('Acceptance test') {
