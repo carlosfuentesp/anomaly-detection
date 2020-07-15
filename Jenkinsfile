@@ -12,17 +12,17 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 echo 'Starting Build'
-                sh 'pip3 install -r requirements.txt'
+                sh "pip3 install -r requirements.txt"
             }
         }
         stage('Run tests') {
             steps {
-                sh './run_tests.sh'
+                sh "bash ./run_tests.sh"
             }
         }
         stage('Run ML pipeline') {
             steps {
-                sh 'python3 source/main.py'
+                sh "python3 source/main.py"
             }
         }
 /*         stage('Acceptance test') {
