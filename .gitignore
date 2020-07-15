@@ -1,9 +1,12 @@
-#IntelliJ
+# IntelliJ
 .idea/
 *.iml
 
-#virtual env
+# virtual env
 env/
 
-#python
+# python
 *.pyc
+
+# Jenkins
+jenkins/jenkins-admin-password.txt

@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  jenkins:
+    container_name: jenkins
+    image: ericnaglertw/cd4ml-build-master:2
+    ports:
+      - "10000:8080"
+    environment:
+      FLUENTD_HOST: fluentd
+      FLUENTD_PORT: 24224
+      TENANT: "jenkins"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    secrets:
+      - jenkins-admin-password
+    networks:
+      - jenkins_nw
+
+volumes:
+  jenkins_home:
+    driver: local
+  data01:
+    driver: local
+
+networks:
+  jenkins_nw:
+    driver: bridge
+
+secrets:
+  jenkins-admin-password:
+    file: ./jenkins/jenkins-admin-password.txt
