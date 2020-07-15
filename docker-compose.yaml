@@ -23,8 +23,6 @@ services:
       - "12000:5000"
     networks:
       - jenkins_nw
-    depends_on:
-      - model
 
 volumes:
   jenkins_home:
