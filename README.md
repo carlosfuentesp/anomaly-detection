@@ -11,7 +11,7 @@ Continuous Delivery was inspired by [CD4ML Scenarios](https://github.com/carlosf
 * [Python 3.7](https://www.python.org/downloads/release/python-377/)
 * [Docker](https://www.docker.com/)
 * [Jenkins](https://jenkins.io/)
-* EFK Stack, [ElasticSearch](https://www.elastic.co/elasticsearch/), [Fluentd](https://www.fluentd.org/), [Kibana](https://www.elastic.co/kibana) 
+* [MlFlow](https://mlflow.org/)
 
 ## Set up
 
@@ -23,4 +23,3 @@ After a successful setup of the environment, the following components are runnin
 
 * [Jenkins](http://localhost:10000/blue)
 * [MLFlow](http://localhost:12000)
-* [Kibala/fluentD/Elasticsearch](http://localhost:5601/app/kibana)

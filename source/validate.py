@@ -2,7 +2,7 @@ from sklearn import metrics
 import numpy as np
 
 
-def validate(model, x_normal, x_attack, x_normal_test):
+def validate(model, x_normal, x_attack, x_normal_test, track):
     print("Validating data...")
     pred = model.predict(x_normal_test)
     score1 = np.sqrt(metrics.mean_squared_error(pred, x_normal_test))
@@ -13,3 +13,7 @@ def validate(model, x_normal, x_attack, x_normal_test):
     print(f"Out of Sample Normal Score (RMSE): {score1}")
     print(f"Insample Normal Score (RMSE): {score2}")
     print(f"Attack Underway Score (RMSE): {score3}")
+
+    validation_metrics = {'Out of Sample Normal Score': score1, 'Insample Normal Score': score1,
+                          'Attack Underway Score': score1}
+    track.log_metrics(validation_metrics)
