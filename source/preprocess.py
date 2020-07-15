@@ -22,6 +22,12 @@ def encode_text_dummy(df, name):
 
 
 def process(df):
+    # display 5 rows
+    pd.set_option('display.max_columns', 7)
+    pd.set_option('display.max_rows', 5)
+
+    df.groupby('outcome')['outcome'].count()
+
     encode_numeric_zscore(df, 'duration')
     encode_text_dummy(df, 'protocol_type')
     encode_text_dummy(df, 'service')
@@ -63,12 +69,23 @@ def process(df):
     encode_numeric_zscore(df, 'dst_host_srv_serror_rate')
     encode_numeric_zscore(df, 'dst_host_rerror_rate')
     encode_numeric_zscore(df, 'dst_host_srv_rerror_rate')
-    normal_mask = df['outcome']=='normal.'
-    attack_mask = df['outcome']!='normal.'
 
-    df.drop('outcome',axis=1,inplace=True)
+    # display 5 rows
+
+    df.dropna(inplace=True, axis=1)
+    normal_mask = df['outcome'] == 'normal.'
+    attack_mask = df['outcome'] != 'normal.'
+
+    df.drop('outcome', axis=1, inplace=True)
 
     df_normal = df[normal_mask]
     df_attack = df[attack_mask]
 
-    return df
+    print(f"Normal count: {len(df_normal)}")
+    print(f"Attack count: {len(df_attack)}")
+
+    # This is the numeric feature vector, as it goes to the neural net
+    x_normal = df_normal.values
+    x_attack = df_attack.values
+
+    return x_normal, x_attack
