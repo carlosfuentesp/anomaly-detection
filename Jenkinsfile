@@ -22,13 +22,13 @@ pipeline {
         }
         stage('Run ML pipeline') {
             steps {
-                sh "python3 /source/main.py"
+                sh 'python3 run_python_script.py pipeline'
             }
         }
-/*         stage('Acceptance test') {
+        stage('Acceptance test') {
             steps {
                 sh 'python3 run_python_script.py acceptance'
             }
-        } */
+        }
     }
 }
