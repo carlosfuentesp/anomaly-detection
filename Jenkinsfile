@@ -8,6 +8,9 @@ pipeline {
        // add timestamps to output
        timestamps()
     }
+    environment {
+        MLFLOW_TRACKING_URL = 'http://mlflow:5000'
+    }
     stages {
         stage('Install dependencies') {
             steps {

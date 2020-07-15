@@ -16,6 +16,16 @@ services:
     networks:
       - jenkins_nw
 
+  mlflow:
+    container_name: mlflow
+    image: ericnaglertw/cd4ml-mlflow:1
+    ports:
+      - "12000:5000"
+    networks:
+      - jenkins_nw
+    depends_on:
+      - model
+
 volumes:
   jenkins_home:
     driver: local
