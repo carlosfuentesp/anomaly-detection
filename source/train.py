@@ -3,7 +3,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
 
-def train(x_normal):
+def train(x_normal, params):
     print("Training data...")
     x_normal_train, x_normal_test = train_test_split(x_normal, test_size=0.25, random_state=42)
 
@@ -16,6 +16,6 @@ def train(x_normal):
     model.add(Dense(25, activation='relu'))
     model.add(Dense(x_normal.shape[1]))  # Multiple output neurons
     model.compile(loss='mean_squared_error', optimizer='adam')
-    model.fit(x_normal_train, x_normal_train, verbose=1, epochs=5)
+    model.fit(x_normal_train, x_normal_train, **params)
 
     return model, x_normal_test

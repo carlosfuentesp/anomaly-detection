@@ -14,7 +14,7 @@ def run():
     params = pipeline_params['model_params'][model_name]
 
     with tracking.track() as track:
-        model, x_normal_test = train(x_normal)
+        model, x_normal_test = train(x_normal, params)
         track.log_ml_params(params)
         track.log_pipeline_params(pipeline_params)
         validate(model, x_normal, x_attack, x_normal_test, track)

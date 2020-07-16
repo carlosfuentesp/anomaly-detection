@@ -1,5 +1,6 @@
 model_parameters = {
     "autoencoders": {
-        "feature 1": "value 1"
+        "verbose": 1,
+        "epochs": 5
     }
 }
