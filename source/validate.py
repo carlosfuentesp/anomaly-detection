@@ -2,6 +2,7 @@ from sklearn import metrics
 import numpy as np
 import json
 import os
+from cd4ml.filenames import file_names
 
 
 def write_predictions_and_score(evaluation_metrics):
@@ -11,6 +12,12 @@ def write_predictions_and_score(evaluation_metrics):
         os.makedirs('results')
     with open(filename, 'w+') as score_file:
         json.dump(evaluation_metrics, score_file)
+
+
+def write_model(model):
+    filename = file_names['model']
+    print("Writing to {}".format(filename))
+    model.save(filename)
 
 
 def validate(model, x_normal, x_attack, x_normal_test, track):
@@ -30,5 +37,6 @@ def validate(model, x_normal, x_attack, x_normal_test, track):
     track.log_metrics(validation_metrics)
 
     write_predictions_and_score(validation_metrics)
-
     print("Evaluation done with metrics {}.".format(json.dumps(validation_metrics)))
+
+    write_model(model)

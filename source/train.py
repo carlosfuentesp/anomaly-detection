@@ -16,6 +16,6 @@ def train(x_normal):
     model.add(Dense(25, activation='relu'))
     model.add(Dense(x_normal.shape[1]))  # Multiple output neurons
     model.compile(loss='mean_squared_error', optimizer='adam')
-    model.fit(x_normal_train, x_normal_train, verbose=1, epochs=100)
+    model.fit(x_normal_train, x_normal_train, verbose=1, epochs=5)
 
     return model, x_normal_test
