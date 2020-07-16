@@ -32,8 +32,8 @@ def validate(model, x_normal, x_attack, x_normal_test, track):
     print(f"Insample Normal Score (RMSE): {score2}")
     print(f"Attack Underway Score (RMSE): {score3}")
 
-    validation_metrics = {'Out of Sample Normal Score': score1, 'Insample Normal Score': score2,
-                          'Attack Underway Score': score3}
+    validation_metrics = {'out_of_sample_normal_score': score1, 'in_sample_normal_score': score2,
+                          'attack_underway_score': score3}
     track.log_metrics(validation_metrics)
 
     write_predictions_and_score(validation_metrics)
