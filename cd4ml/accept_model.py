@@ -12,7 +12,7 @@ def get_latest_executed_run(df_of_runs):
 
 
 def get_metric(metric_name, df_of_single_run):
-    return df_of_single_run["metrics.%s" % metric_name].head().values[0]
+    return df_of_single_run[metric_name].head().values[0]
 
 
 def check_model_performance(metric_name, threshold_min, threshold_max):
