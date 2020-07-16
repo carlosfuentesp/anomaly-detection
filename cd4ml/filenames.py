@@ -22,5 +22,5 @@ file_names = {
     'train': '%s/splitter/train.csv' % data_dir,
     'validation': '%s/splitter/validation.csv' % data_dir,
     'model': '%s/' % model_dir,
-    'ml_params': 'ml_model_params.py'
+    'ml_params': 'model_params.py'
 }

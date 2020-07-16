@@ -10,11 +10,11 @@ def read_data():
     except:
         print('Error downloading')
         raise
-    temp_df = pd.read_csv(path, header=None)
+    df = pd.read_csv(path, header=None)
 
-    temp_df.dropna(inplace=True, axis=1)
+    df.dropna(inplace=True, axis=1)
 
-    temp_df.columns = [
+    df.columns = [
         'duration',
         'protocol_type',
         'service',
@@ -59,4 +59,4 @@ def read_data():
         'outcome'
     ]
 
-    return temp_df
+    return df
