@@ -32,6 +32,8 @@ def check_model_performance(metric_name, threshold_min, threshold_max):
     print(runs.head())
     last_run_record = get_latest_executed_run(runs)
     metric_value = get_metric(metric_name, last_run_record)
+    print("value of the metric")
+    print(metric_value)
     run_name = last_run_record["tags.mlflow.runName"].head().values[0]
     print("run name")
     print(run_name)
