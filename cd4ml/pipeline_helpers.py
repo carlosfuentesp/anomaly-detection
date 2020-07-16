@@ -1,7 +1,7 @@
 from source.main import run
 
 
-def train_and_validate_model():
-    print('Training and validating model')
+def run_ml_pipeline():
+    print('Start ML pipeline')
     run()
-    print('Done training and validating model')
+    print('Done ML pipeline')

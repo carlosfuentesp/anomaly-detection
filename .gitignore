@@ -15,3 +15,6 @@ jenkins/jenkins-admin-password.txt
 # Tests
 .coverage
 cov_html/
+
+# Data
+results

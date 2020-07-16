@@ -1,5 +1,16 @@
 from sklearn import metrics
 import numpy as np
+import json
+import os
+
+
+def write_predictions_and_score(evaluation_metrics):
+    filename = 'results/metrics.json'
+    print("Writing to {}".format(filename))
+    if not os.path.exists('results'):
+        os.makedirs('results')
+    with open(filename, 'w+') as score_file:
+        json.dump(evaluation_metrics, score_file)
 
 
 def validate(model, x_normal, x_attack, x_normal_test, track):
@@ -17,3 +28,7 @@ def validate(model, x_normal, x_attack, x_normal_test, track):
     validation_metrics = {'Out of Sample Normal Score': score1, 'Insample Normal Score': score2,
                           'Attack Underway Score': score3}
     track.log_metrics(validation_metrics)
+
+    write_predictions_and_score(validation_metrics)
+
+    print("Evaluation done with metrics {}.".format(json.dumps(validation_metrics)))

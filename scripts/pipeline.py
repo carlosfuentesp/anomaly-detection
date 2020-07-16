@@ -1,4 +1,4 @@
-from cd4ml.pipeline_helpers import train_and_validate_model
+from cd4ml.pipeline_helpers import run_ml_pipeline
 
 
 def main(*args):
@@ -14,4 +14,4 @@ def main(*args):
     if variable:
         print('variable: %s' % variable)
 
-    train_and_validate_model()
+    run_ml_pipeline()
