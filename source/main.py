@@ -8,7 +8,6 @@ from cd4ml.pipeline_params import pipeline_params
 
 
 def run():
-    
     # get_file()
 
     df = read_data()
