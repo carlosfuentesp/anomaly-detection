@@ -8,7 +8,8 @@ from cd4ml.pipeline_params import pipeline_params
 
 
 def run():
-    get_file()
+    
+    # get_file()
 
     df = read_data()
     x_normal, x_attack = process(df)
