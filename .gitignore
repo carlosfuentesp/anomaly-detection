@@ -19,3 +19,7 @@ cov_html/
 # Data
 results
 data
+
+#Drive API
+token.pickle
+credentials.json
