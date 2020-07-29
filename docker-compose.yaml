@@ -34,21 +34,20 @@ services:
       - "5432:5432"
 
   webserver:
-    image: puckel/docker-airflow:1.10.1
-    build:
-      context: https://github.com/puckel/docker-airflow.git#1.10.1
-      dockerfile: Dockerfile
-      args:
-        PYTHON_DEPS: sqlalchemy==1.2.0
+    image: puckel/docker-airflow:1.10.9
     restart: always
     depends_on:
       - postgres
     environment:
       - LOAD_EX=n
       - EXECUTOR=Local
-      - FERNET_KEY=jsDPRErfv8Z_eVTnGfF8ywd19j4pyqE3NpdUBA_oRTo=
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
     volumes:
-      - ./examples/intro-example/dags:/usr/local/airflow/dags
+      - ./dags:/usr/local/airflow/dags
+      # - ./plugins:/usr/local/airflow/plugins
     ports:
       - "8080:8080"
     command: webserver
