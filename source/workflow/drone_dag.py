@@ -12,7 +12,7 @@ def pepe():
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': days_ago(0),
+    'start_date': days_ago(2),
     'email': ['educharlief@gmail.com'],
     'email_on_failure': True,
     'email_on_retry': True,
@@ -39,13 +39,4 @@ t2 = PythonOperator(
     dag=dag,
 )
 
-dag.doc_md = __doc__
-
-t1.doc_md = """\
-#### Task Documentation
-You can document your task using the attributes `doc_md` (markdown),
-`doc` (plain text), `doc_rst`, `doc_json`, `doc_yaml` which gets
-rendered in the UI's Task Instance Details page.
-![img](http://montcs.bloomu.edu/~bobmon/Semesters/2012-01/491/import%20soul.png)
-"""
 t1 >> t2
