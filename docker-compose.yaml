@@ -42,7 +42,7 @@ services:
       - LOAD_EX=n
       - EXECUTOR=Local
     volumes:
-      - ./source/workflow:/usr/local/airflow/dags
+      - ./dags:/usr/local/airflow/dags
     ports:
       - "8080:8080"
     command: webserver
