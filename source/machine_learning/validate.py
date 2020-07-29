@@ -17,7 +17,9 @@ def write_predictions_and_score(evaluation_metrics):
 def write_model(model):
     filename = file_names['model']
     print("Writing to {}".format(filename))
-    model.save(filename)
+    # FIX Unable to create file (unable to open file: name = 'data/models/', errno = 21,
+    # error message = 'Is a directory', flags = 13, o_flags = 242)
+    # model.save(filename)
 
 
 def validate(model, x_normal, x_attack, x_normal_test, track):
