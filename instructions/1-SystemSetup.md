@@ -58,4 +58,4 @@ it will show red lines everywhere because it can't find the installed libraries.
 
 ### Next Steps
 
-Continue to the [next section](https://github.com/carlosfuentesp/anomaly-detection/instructions/2-SetupJenkins.md).
+Continue to the [next section](https://github.com/carlosfuentesp/anomaly-detection/blob/master/instructions/2-SetupJenkins.md).

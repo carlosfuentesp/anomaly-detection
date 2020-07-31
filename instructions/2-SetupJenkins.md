@@ -17,3 +17,7 @@ Enter your Github Personal Access Token.
 Select your github account, then anomaly-detection and click "Create Pipeline"
 
 At this step the pipeline will build, you can select the pipeline to see the individual steps execute. At the end the pipeline should be 'green' indicating that all the steps were successful.
+
+### Next Steps
+
+Continue to the [next section](https://github.com/carlosfuentesp/anomaly-detection/blob/master/instructions/3-MachineLearning.md).
