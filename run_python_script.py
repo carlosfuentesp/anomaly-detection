@@ -7,10 +7,8 @@ script_names_str = script_names.__repr__()
 
 
 def run_python_script(script_name, *args, **kwargs):
-    if 'profiler' in kwargs:
-        use_profiler = True
-    else:
-        use_profiler = False
+    """Execute a helper script optionally using the cProfile profiler."""
+    use_profiler = kwargs.get('profiler', False)
 
     if script_name == 'show':
         print("\nAvailable scripts\n----------------")
@@ -19,7 +17,7 @@ def run_python_script(script_name, *args, **kwargs):
 
         exit(0)
 
-    if profiler:
+    if use_profiler:
         print("running with profiler")
 
     if script_name == "pipeline":
@@ -33,7 +31,7 @@ def run_python_script(script_name, *args, **kwargs):
                                                                  script_names_str)
         raise ValueError(message)
 
-    if profiler:
+    if use_profiler:
         command = "script.main(*args)"
         filename = "%s.prof" % script_name
         cProfile.runctx(command, None, locals(), filename=filename)

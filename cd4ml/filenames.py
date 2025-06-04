@@ -21,6 +21,6 @@ file_names = {
     'metrics': '%s/results/metrics.json' % data_dir,
     'train': '%s/splitter/train.csv' % data_dir,
     'validation': '%s/splitter/validation.csv' % data_dir,
-    'model': '%s/' % model_dir,
+    'model': '%s/model.h5' % model_dir,
     'ml_params': 'model_params.py'
 }
