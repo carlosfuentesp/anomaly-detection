@@ -1,6 +1,6 @@
 pandas==1.0.5
 tensorflow
-keras==2.4.3
+keras==3.9.0
 pytest==5.0.1
 coverage==4.5.4
 flake8==3.7.8
