@@ -41,9 +41,9 @@ def run_python_script(script_name, *args, **kwargs):
 
 
 if __name__ == "__main__":
-    profiler = ' -p' in ' '.join(sys.argv)
+    use_profiler = ' -p' in ' '.join(sys.argv)
     script = sys.argv[1]
     arguments = sys.argv[2:]
-    # remove the profile flag now that profiler is on
+    # remove the profile flag now that use_profiler is on
     arguments = [i for i in arguments if i != '-p']
-    run_python_script(script, arguments, profiler=profiler)
+    run_python_script(script, arguments, profiler=use_profiler)
